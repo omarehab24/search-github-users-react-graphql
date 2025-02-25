@@ -6,7 +6,7 @@ const App = () => {
   const [userName, setUserName] = useState('Name');
 
   return (
-    <main className="mx-20 max-w-6xl px-8 py-20">
+    <main className="mx-auto max-w-5xl px-8 py-20">
       <SearchForm userName={userName} setUserName={setUserName} />
       <UserProfile userName={userName} />
     </main>
