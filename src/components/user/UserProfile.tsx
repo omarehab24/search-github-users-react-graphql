@@ -6,6 +6,7 @@ import StatsContainer from './StatsContainer';
 import ForkedRepos from '../charts/ForkedRepos';
 import PopularRepos from '../charts/PopularRepos';
 import UsedLanguages from '../charts/UsedLanguages';
+import Loading from './Loading';
 
 type UserProfileProps = {
     userName: string;
@@ -16,7 +17,7 @@ const UserProfile = ({ userName }: UserProfileProps) => {
         variables: { login: userName },
     });
 
-    if (loading) return <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Loading...</h2>
+    if (loading) return <Loading />
     if (error) return <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Error: {error.message}</h2>
     if (!data) return <h2 className="text-2xl font-bold text-gray-900 dark:text-white">User not found</h2>
 
