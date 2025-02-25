@@ -54,7 +54,7 @@ export const calculateMostUsedLanguages = (repositories: Repository[]): { langua
 
     // Initialize a map to track how many times each language appears
     // Example: { "JavaScript": 5, "Python": 3, "TypeScript": 2 }
-    const languageMap: { [mykey: string]: number } = {};
+    const languageMap: { [key: string]: number } = {};
 
     repositories.forEach(repo => {
         if (repo.languages.edges.length === 0) {
