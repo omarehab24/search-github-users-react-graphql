@@ -17,7 +17,7 @@ const UserCard = ({ name, bio, url, avatarUrl }: UserCardProps) => {
                 <div className="flex flex-col gap-y-2">
                     <CardTitle>{name || "Name"}</CardTitle>
                     <CardDescription>{bio || "Bio"}</CardDescription>
-                    <Button asChild size='sm' className="w-20 mt-2">
+                    <Button asChild size='sm' className="w-30 mt-2">
                         <a href={url} target="_blank" rel="noreferrer">
                             Follow
                         </a>
