@@ -1,5 +1,3 @@
-import { type Repository } from "@/types"
-import { calculateMostUsedLanguages } from "@/utils"
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from 'recharts';
 import {
     ChartConfig,
@@ -8,9 +6,16 @@ import {
     ChartTooltipContent,
 } from '@/components/ui/chart';
 
+import { type Repository } from "@/types"
+import { calculateMostUsedLanguages } from "@/utils"
+
 const UsedLanguages = ({ repositories }: { repositories: Repository[] }) => {
+    // Calculate popular languages
+    //  [{language: string, count: number}]
     const mostUsedLanguages = calculateMostUsedLanguages(repositories)
 
+    // Configuration for the chart's styling and labels
+    // color sets the color of the bars
     const chartConfig = {
         language: {
             label: "Language",
