@@ -1,50 +1,120 @@
-# React + TypeScript + Vite
+# GitHub User Search
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React application that allows you to search for GitHub users and display their profiles, repositories, statistics, and more using GitHub's GraphQL API.
 
-Currently, two official plugins are available:
+## Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[Link](https://search-github-users-react-graphql.vercel.app/)
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Search for GitHub users by username
+- View user profile information including bio and avatar
+- Display user statistics (repositories, followers, following, gists)
+- Visualize repository data with charts:
+  - Most used programming languages
+  - Most popular repositories (by stars)
+  - Most forked repositories
 
-- Configure the top-level `parserOptions` property like this:
+## Technologies Used
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- React 19
+- TypeScript
+- GitHub GraphQL API
+- Apollo Client for GraphQL
+- Tailwind CSS for styling
+- Reusable shadcn/ui components
+- Recharts for data visualization
+- Vite for build tooling
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (latest LTS version recommended)
+- GitHub Personal Access Token with appropriate permissions
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/search-github-users.git
+   cd search-github-users
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Create a `.env` file in the root directory with your GitHub token:
+   ```
+   VITE_GITHUB_TOKEN=your_github_personal_access_token
+   ```
+
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+5. Open your browser and navigate to `http://localhost:5173`
+
+## Project Structure
+
+```
+search-github-users/
+├── src/
+│   ├── components/
+│   │   ├── charts/       # Chart visualization components
+│   │   ├── form/         # Search form components
+│   │   ├── ui/           # Reusable UI components
+│   │   └── user/         # User profile components
+│   ├── App.tsx           # Main application component
+│   ├── apolloClient.ts   # Apollo Client setup
+│   ├── main.tsx          # Entry point
+│   ├── queries.ts        # GraphQL queries
+│   └── types.ts          # TypeScript type definitions
+├── package.json
+├── tsconfig.json
+└── vite.config.ts
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Usage
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+1. Enter a GitHub username in the search form
+2. View the user's profile information, statistics, and repository data
+3. Explore the charts to gain insights into the user's GitHub activity
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+## API
+
+This project uses GitHub's GraphQL API. The main query fetches:
+
+- User profile information
+- Repository details
+- Language statistics
+- Follower and following counts
+- Gist counts
+
+## Building for Production
+
+To build the application for production:
+
+```bash
+npm run build
 ```
+
+The build artifacts will be stored in the `dist/` directory.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.

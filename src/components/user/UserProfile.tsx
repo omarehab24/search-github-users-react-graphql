@@ -18,7 +18,7 @@ const UserProfile = ({ userName }: UserProfileProps) => {
     });
 
     if (loading) return <Loading />
-    if (error) return <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Error: {error.message}</h2>
+    if (error) return <h2 className="text-2xl font-bold text-gray-900 dark:text-white">User not found</h2>
     if (!data) return <h2 className="text-2xl font-bold text-gray-900 dark:text-white">User not found</h2>
 
     const { name, bio, avatarUrl, url, repositories, followers, following, gists } = data.user
