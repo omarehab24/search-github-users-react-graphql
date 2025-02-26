@@ -2,6 +2,10 @@
 
 A React application that allows you to search for GitHub users and display their profiles, repositories, statistics, and more using GitHub's GraphQL API.
 
+## Live Demo
+
+[Link](https://search-github-users-react-graphql.vercel.app/)
+
 ## Features
 
 - Search for GitHub users by username
