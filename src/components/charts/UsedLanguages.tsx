@@ -27,7 +27,7 @@ const UsedLanguages = ({ repositories }: { repositories: Repository[] }) => {
         <div>
             <h2 className="text-2xl font-semibold text-center mb-4">Used languages</h2>
             {/* ChartContainer handles responsive sizing and theme variables */}
-            <ChartContainer config={chartConfig} className="w-full h-96">
+            <ChartContainer config={chartConfig} className="h-40 md:h-100 w-full">
                 {/* BarChart is the main container for the bar chart visualization */}
                 {/* accessibilityLayer adds ARIA labels for better screen reader support */}
                 <BarChart accessibilityLayer data={mostUsedLanguages}>
@@ -37,7 +37,9 @@ const UsedLanguages = ({ repositories }: { repositories: Repository[] }) => {
                     <XAxis
                         dataKey="language"
                         tickLine={false} // Removes tick marks
-                        tickMargin={10} /> // Adds spacing between labels and axis
+                        tickMargin={10}  // Adds spacing between labels and axis
+                        tickFormatter={(value) => value.slice(0, 10)}
+                    />
                     {/* YAxis configures the vertical axis showing the count of each language */}
                     <YAxis dataKey="count" />
                     {/* ChartTooltip shows details when hovering over bars */}

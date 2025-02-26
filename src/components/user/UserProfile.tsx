@@ -29,7 +29,7 @@ const UserProfile = ({ userName }: UserProfileProps) => {
             <StatsContainer totalRepos={repositories.totalCount} totalFollowers={followers.totalCount} totalFollowing={following.totalCount} gists={gists.totalCount} />
             {
                 repositories.totalCount > 0 && (
-                    <div className='grid md:grid-cols-2 gap-4'>
+                    <div className='grid md:grid-cols-2 gap-6'>
                         <UsedLanguages repositories={repositories.nodes} />
                         <PopularRepos repositories={repositories.nodes} />
                         <ForkedRepos repositories={repositories.nodes} />

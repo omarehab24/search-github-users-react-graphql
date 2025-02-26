@@ -25,7 +25,7 @@ const ForkedRepos = ({ repositories }: { repositories: Repository[] }) => {
         <div>
             <h2 className='text-2xl font-semibold text-center mb-4'>Forked Repos</h2>
             {/* ChartContainer handles responsive sizing and theme variables */}
-            <ChartContainer config={chartConfig} className='h-100 w-full'>
+            <ChartContainer config={chartConfig} className='h-40 md:h-100 w-full'>
                 {/* BarChart is the main container for the bar chart visualization */}
                 {/* accessibilityLayer adds ARIA labels for better screen reader support */}
                 <BarChart accessibilityLayer data={mostForkedRepos}>
@@ -35,9 +35,9 @@ const ForkedRepos = ({ repositories }: { repositories: Repository[] }) => {
                     {/* XAxis configures the horizontal axis */}
                     <XAxis
                         dataKey='repo' // Uses 'repo' property from data for labels
-                        tickLine={true} // Shows small lines at each tick mark
+                        tickLine={false} // Shows small lines at each tick mark
                         tickMargin={10} // Space between tick line and label
-                        tickFormatter={(value) => value.slice(0, 10)} // Truncates long repo names
+                        tickFormatter={(value) => value.slice(0, 7)} // Truncates long repo names
                     />
 
                     {/* YAxis configures the vertical axis, showing fork counts */}
