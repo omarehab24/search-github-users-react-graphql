@@ -25,7 +25,7 @@ const PopularRepos = ({ repositories }: { repositories: Repository[] }) => {
         <div>
             <h2 className='text-2xl font-semibold text-center mb-4'>Popular Repos</h2>
             {/* ChartContainer: Custom wrapper component that handles responsive sizing and theme */}
-            <ChartContainer config={chartConfig} className='h-96 w-full'>
+            <ChartContainer config={chartConfig} className='h-40 md:h-100 w-full'>
                 {/* BarChart: Main chart component from recharts */}
                 {/* accessibilityLayer adds ARIA labels for better screen reader support */}
                 <BarChart accessibilityLayer data={popularRepos}>
@@ -38,7 +38,7 @@ const PopularRepos = ({ repositories }: { repositories: Repository[] }) => {
                         dataKey='repo'
                         tickLine={false}
                         tickMargin={10}
-                        tickFormatter={(value) => value.slice(0, 10)}
+                        tickFormatter={(value) => value.slice(0, 7)}
                     />
 
                     {/* YAxis: Vertical axis showing star counts */}
