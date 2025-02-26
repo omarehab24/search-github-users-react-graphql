@@ -23,7 +23,7 @@ const SearchForm = ({ userName, setUserName }: SearchFormProps) => {
     return (
         <form onSubmit={handleSearch} className='flex items-center gap-x-2 w-full lg:w-1/3 mb-8'>
             <Label htmlFor='name' className='sr-only'>Name</Label>
-            <Input id='name' placeholder='Search for a user' value={text} onChange={(e) => setText(e.target.value)} className='flex-grow bg-background' />
+            <Input id='name' placeholder='Search for a github user' value={text} onChange={(e) => setText(e.target.value)} className='flex-grow bg-background' />
             <Button type='submit'>Search</Button>
         </form>
     )
